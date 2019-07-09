@@ -1,12 +1,12 @@
 
 class Player
-    attr_reader :name
+    attr_reader :name, :score, :lives
 
-    LIVES = 3
+    STARTING_LIVES = 3
 
     def initialize(name)
         @name = name
-        @lives = LIVES
+        @lives = STARTING_LIVES
         @score = 0
     end
 
@@ -18,5 +18,8 @@ class Player
         @score += 1
     end
 
+    def summary 
+        "#{@name}: #{@lives}/3"
+    end
 
 end

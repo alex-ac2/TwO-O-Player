@@ -4,7 +4,7 @@ class Turn_Manager
 
     def initialize(players)
         @players = players.dup.shuffle
-        @current_turn = 1
+        @current_turn = 0
     end
 
     def next_turn
@@ -14,17 +14,19 @@ class Turn_Manager
             current_player,
             increment_turn
         )
-
+        @current_turn
     end
 
     private
     
     def increment_turn
+        current_turn = @current_turn
         @current_turn += 1
         current_turn
     end 
 
     def get_current_player
+        @players.first
     end
 
 
